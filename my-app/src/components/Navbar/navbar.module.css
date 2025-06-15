@@ -1,21 +1,67 @@
-.navComponent {
-  background-color: #58a4b0;
-  width: 100%;
-  height: 3em;
-  position: sticky;
-  top: 0;
+@media only screen and (min-width: 992px) {
+  .navComponent {
+    border: 0.5px solid #a9bcd0;
+    width: 100%;
+    height: 5em;
+    position: sticky;
+    top: 0;
+  }
+
+  .navList {
+    background-color: #58a4b0;
+    display: flex;
+    justify-content: center;
+    height: 3.5em;
+    margin: 0.75em auto 1em auto;
+    max-width: 45em;
+    border-radius: 3em;
+  }
+
+  .navLink {
+    background-color: #d8dbe2;
+    flex-direction: row;
+    /* min-width: 10em; */
+    min-width: 6em;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 0.5em;
+  }
+
+  .navLink:hover {
+    background-color: #d8dbe2;
+    border: 1px solid #58a4b0;
+    color: #58a4b0;
+  }
+
+  .hamurgerIcon {
+    display: none;
+  }
 }
 
-.navList {
-  display: flex;
-  background-color: #58a4b0;
-  justify-content: center;
-  height: 2.5em;
-}
+@media only screen and (max-width: 992px) {
+  .navComponent {
+    overflow: hidden;
+    background-color: #58a4b0;
+    position: relative;
+  }
 
-.navLink {
-  background-color: #a9bcd0;
-  flex-direction: row;
-  width: 7em;
-  text-align: center;
+  .navLink {
+    display: none;
+  }
+
+  .navList {
+    background-color: #58a4b0;
+    height: 1.5em;
+    text-decoration: none;
+    display: block;
+  }
+
+  .hamburger {
+    background-color: #58a4b0;
+    margin-top: 1em;
+    margin-left: 1em;
+  }
 }
