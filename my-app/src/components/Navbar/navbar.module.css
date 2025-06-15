@@ -1,0 +1,21 @@
+.navComponent {
+  background-color: #58a4b0;
+  width: 100%;
+  height: 3em;
+  position: sticky;
+  top: 0;
+}
+
+.navList {
+  display: flex;
+  background-color: #58a4b0;
+  justify-content: center;
+  height: 2.5em;
+}
+
+.navLink {
+  background-color: #a9bcd0;
+  flex-direction: row;
+  width: 7em;
+  text-align: center;
+}
