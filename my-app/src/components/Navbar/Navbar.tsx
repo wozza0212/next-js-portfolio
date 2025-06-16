@@ -9,37 +9,60 @@ const Navbar = () => {
   const toggleMenu = () => setMobileMenu((mobileMenu) => !mobileMenu);
 
   return (
-    <div className={styles.navComponent}>
-      <nav>
-        <div className={styles.hamurgerIcon}>
-          <Image
-            className={styles.hamburger}
-            src="/menu.svg"
-            alt="HamburgerMenu"
-            width={40}
-            height={40}
-            priority
-            onClick={toggleMenu}
-          />
-        </div>
-        <ul className={styles.navList}>
-          <div className={styles.navLink}>
-            <Link href={"/"}>Home</Link>
+    <div>
+      <div className={styles.navComponent}>
+        <nav>
+          <div className={styles.hamurgerIcon}>
+            <Image
+              className={styles.hamburger}
+              src="/menu.svg"
+              alt="HamburgerMenu"
+              width={40}
+              height={40}
+              priority
+              onClick={toggleMenu}
+            />
           </div>
-          <div className={styles.navLink}>
-            <Link href={"/"}>About Me</Link>
-          </div>
-          <div className={styles.navLink}>
-            <Link href={"/"}>Articles</Link>
-          </div>
-          <div className={styles.navLink}>
-            <Link href={"/"}>Components</Link>
-          </div>
-          <div className={styles.navLink}>
-            <Link href={"/"}>Github</Link>
-          </div>
-        </ul>
-      </nav>
+          <ul className={styles.navList}>
+            <div className={styles.navLink}>
+              <Link href={"/"}>Home</Link>
+            </div>
+            <div className={styles.navLink}>
+              <Link href={"/"}>About Me</Link>
+            </div>
+            <div className={styles.navLink}>
+              <Link href={"/"}>Articles</Link>
+            </div>
+            <div className={styles.navLink}>
+              <Link href={"/"}>Components</Link>
+            </div>
+            <div className={styles.navLink}>
+              <Link href={"/"}>Github</Link>
+            </div>
+          </ul>
+        </nav>
+      </div>
+      {mobileMenu && (
+        <nav className={styles.mobileNav}>
+          <ul className={styles.mobileList}>
+            <div className={styles.mobileLink}>
+              <Link href={"/"}>Home</Link>
+            </div>
+            <div className={styles.mobileLink}>
+              <Link href={"/"}>About Me</Link>
+            </div>
+            <div className={styles.mobileLink}>
+              <Link href={"/"}>Articles</Link>
+            </div>
+            <div className={styles.mobileLink}>
+              <Link href={"/"}>Components</Link>
+            </div>
+            <div className={styles.mobileLink}>
+              <Link href={"/"}>Github</Link>
+            </div>
+          </ul>
+        </nav>
+      )}
     </div>
   );
 };

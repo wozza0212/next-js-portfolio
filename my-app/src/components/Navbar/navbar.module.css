@@ -46,6 +46,7 @@
     overflow: hidden;
     background-color: #58a4b0;
     position: relative;
+    border: red 2px solid;
   }
 
   .navLink {
@@ -53,7 +54,6 @@
   }
 
   .navList {
-    background-color: #58a4b0;
     height: 1.5em;
     text-decoration: none;
     display: block;
@@ -63,5 +63,31 @@
     background-color: #58a4b0;
     margin-top: 1em;
     margin-left: 1em;
+    padding: 0.25em;
+  }
+
+  .hamburger:hover {
+    background-color: #58a4b0;
+    margin-top: 1em;
+    margin-left: 1em;
+    border: 1px solid #a9bcd0;
+    background-color: #d8dbe2;
+  }
+
+  .mobileList {
+    background-color: #58a4b0;
+    text-decoration: none;
+    width: 10em;
+  }
+
+  .mobileLink {
+    min-width: 4em;
+    background-color: #d8dbe2;
+    text-decoration: none;
+    padding-left: 2em;
+    border: solid 1px #58a4b0;
+    height: 2em;
+    margin-top: 5px;
+    right: 20px;
   }
 }
