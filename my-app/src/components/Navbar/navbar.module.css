@@ -1,0 +1,62 @@
+@media only screen and (min-width: 992px) {
+  .navComponent {
+    border: 0.5px solid #a9bcd0;
+    width: 100%;
+    height: 5em;
+    position: sticky;
+    top: 0;
+  }
+
+  .navList {
+    background-color: #58a4b0;
+    display: flex;
+    justify-content: center;
+    height: 3.5em;
+    margin: 0.75em auto 1em auto;
+    max-width: 45em;
+    border-radius: 3em;
+  }
+
+  .hamurgerIcon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navComponent {
+    overflow: hidden;
+    background-color: #58a4b0;
+    position: relative;
+  }
+
+  .navList {
+    height: 1.5em;
+    text-decoration: none;
+    display: block;
+  }
+
+  .hamburger {
+    background-color: #58a4b0;
+    margin-top: 1em;
+    margin-left: 1em;
+    padding: 0.25em;
+  }
+
+  .hamburger:hover {
+    background-color: #58a4b0;
+    margin-top: 1em;
+    margin-left: 1em;
+    border: 2px solid #d8dbe2;
+  }
+
+  .mobileList {
+    width: 10em;
+    position: fixed;
+    background-color: #58a4b0;
+    margin-left: 1em;
+    margin-top: -0.5em;
+    border-radius: 0.5em;
+    padding-bottom: 0.5em;
+    border: 1px solid #a9bcd0;
+  }
+}
