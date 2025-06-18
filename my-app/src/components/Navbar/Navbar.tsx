@@ -2,7 +2,8 @@
 import Link from "next/link";
 import styles from "./navbar.module.css";
 import Image from "next/image";
-import { use, useState } from "react";
+import { useState } from "react";
+import NavLink from "./NavLink/NavLink";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -24,42 +25,24 @@ const Navbar = () => {
             />
           </div>
           <ul className={styles.navList}>
-            <div className={styles.navLink}>
-              <Link href={"/"}>Home</Link>
-            </div>
-            <div className={styles.navLink}>
-              <Link href={"/"}>About Me</Link>
-            </div>
-            <div className={styles.navLink}>
-              <Link href={"/"}>Articles</Link>
-            </div>
-            <div className={styles.navLink}>
-              <Link href={"/"}>Components</Link>
-            </div>
-            <div className={styles.navLink}>
-              <Link href={"/"}>Github</Link>
-            </div>
+            <NavLink href="/" linkText="Home"></NavLink>
+            <NavLink href="/" linkText="About Me"></NavLink>
+            <NavLink href="/" linkText="Articles"></NavLink>
+            <NavLink href="/" linkText="Components"></NavLink>
+            <NavLink href="/" linkText="GitHub"></NavLink>
+            <NavLink href="/" linkText="Home"></NavLink>
           </ul>
         </nav>
       </div>
       {mobileMenu && (
         <nav className={styles.mobileNav}>
           <ul className={styles.mobileList}>
-            <div className={styles.mobileLink}>
-              <Link href={"/"}>Home</Link>
-            </div>
-            <div className={styles.mobileLink}>
-              <Link href={"/"}>About Me</Link>
-            </div>
-            <div className={styles.mobileLink}>
-              <Link href={"/"}>Articles</Link>
-            </div>
-            <div className={styles.mobileLink}>
-              <Link href={"/"}>Components</Link>
-            </div>
-            <div className={styles.mobileLink}>
-              <Link href={"/"}>Github</Link>
-            </div>
+            <NavLink mobile href="/" linkText="Home"></NavLink>
+            <NavLink mobile href="/" linkText="About Me"></NavLink>
+            <NavLink mobile href="/" linkText="Articles"></NavLink>
+            <NavLink mobile href="/" linkText="Components"></NavLink>
+            <NavLink mobile href="/" linkText="GitHub"></NavLink>
+            <NavLink mobile href="/" linkText="Home"></NavLink>
           </ul>
         </nav>
       )}
