@@ -4,6 +4,23 @@ import styles from "./navbar.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import NavLink from "./NavLink/NavLink";
+import NavList from "./NavList/NavList";
+
+const mobileLinks = [
+  { mobile: true, href: "/", linkText: "Home" },
+  { mobile: true, href: "/", linkText: "About" },
+  { mobile: true, href: "/", linkText: "Articles" },
+  { mobile: true, href: "/", linkText: "Components" },
+  { mobile: true, href: "/", linkText: "About" },
+];
+
+const mainNavLinks = [
+  { mobile: false, href: "/", linkText: "Home" },
+  { mobile: false, href: "/", linkText: "About" },
+  { mobile: false, href: "/", linkText: "Articles" },
+  { mobile: false, href: "/", linkText: "Components" },
+  { mobile: false, href: "/", linkText: "About" },
+];
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -24,26 +41,12 @@ const Navbar = () => {
               onClick={toggleMenu}
             />
           </div>
-          <ul className={styles.navList}>
-            <NavLink href="/" linkText="Home"></NavLink>
-            <NavLink href="/" linkText="About Me"></NavLink>
-            <NavLink href="/" linkText="Articles"></NavLink>
-            <NavLink href="/" linkText="Components"></NavLink>
-            <NavLink href="/" linkText="GitHub"></NavLink>
-            <NavLink href="/" linkText="Home"></NavLink>
-          </ul>
+          <NavList mobile={false} links={mainNavLinks} />
         </nav>
       </div>
       {mobileMenu && (
         <nav className={styles.mobileNav}>
-          <ul className={styles.mobileList}>
-            <NavLink mobile href="/" linkText="Home"></NavLink>
-            <NavLink mobile href="/" linkText="About Me"></NavLink>
-            <NavLink mobile href="/" linkText="Articles"></NavLink>
-            <NavLink mobile href="/" linkText="Components"></NavLink>
-            <NavLink mobile href="/" linkText="GitHub"></NavLink>
-            <NavLink mobile href="/" linkText="Home"></NavLink>
-          </ul>
+          <NavList mobile={true} links={mobileLinks}></NavList>
         </nav>
       )}
     </div>
