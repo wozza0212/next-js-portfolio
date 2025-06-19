@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styles from "./navLink.module.css";
 
-export interface NavLinkProps {
+export type NavLinkProps = {
   href: string;
   linkText: string;
   mobile?: boolean;

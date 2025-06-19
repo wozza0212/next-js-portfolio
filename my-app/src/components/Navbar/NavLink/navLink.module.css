@@ -17,6 +17,12 @@
   color: #58a4b0;
 }
 
+@media only screen and (min-width: 993px) {
+  .mobileLink {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .navLink {
     display: none;

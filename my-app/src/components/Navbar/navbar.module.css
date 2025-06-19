@@ -29,12 +29,6 @@
     position: relative;
   }
 
-  .navList {
-    height: 1.5em;
-    text-decoration: none;
-    display: block;
-  }
-
   .hamburger {
     background-color: #58a4b0;
     margin-top: 1em;
@@ -47,16 +41,5 @@
     margin-top: 1em;
     margin-left: 1em;
     border: 2px solid #d8dbe2;
-  }
-
-  .mobileList {
-    width: 10em;
-    position: fixed;
-    background-color: #58a4b0;
-    margin-left: 1em;
-    margin-top: -0.5em;
-    border-radius: 0.5em;
-    padding-bottom: 0.5em;
-    border: 1px solid #a9bcd0;
   }
 }
