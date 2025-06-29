@@ -6,7 +6,8 @@ export type NavLinkProps = {
   href: string;
   linkText: string;
   mobile?: boolean;
-}
+  key: string
+};
 
 const NavLink = ({ href, linkText, mobile }: NavLinkProps) => {
   if (mobile) {
