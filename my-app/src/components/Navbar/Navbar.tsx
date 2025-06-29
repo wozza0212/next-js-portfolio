@@ -1,25 +1,23 @@
 "use client";
-import Link from "next/link";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import { useState } from "react";
-import NavLink from "./NavLink/NavLink";
 import NavList from "./NavList/NavList";
 
 const mobileLinks = [
-  { mobile: true, href: "/", linkText: "Home", key: 'home-link'},
-  { mobile: true, href: "/", linkText: "About", key: 'about-link' },
-  { mobile: true, href: "/", linkText: "Articles", key: 'articles-link' },
-  { mobile: true, href: "/", linkText: "Components", key: 'components-link' },
-  { mobile: true, href: "/", linkText: "About", key: 'about2-link' },
+  { mobile: true, href: "/", linkText: "Home", key: "home-link" },
+  { mobile: true, href: "/", linkText: "About", key: "about-link" },
+  { mobile: true, href: "/", linkText: "Articles", key: "articles-link" },
+  { mobile: true, href: "/", linkText: "Components", key: "components-link" },
+  { mobile: true, href: "/", linkText: "About", key: "about2-link" },
 ];
 
 const mainNavLinks = [
-  { mobile: false, href: "/", linkText: "Home",  key: 'home-link' },
-  { mobile: false, href: "/", linkText: "About", key: 'about-link' },
-  { mobile: false, href: "/", linkText: "Articles", key: 'articles-link' },
-  { mobile: false, href: "/", linkText: "Components", key: 'components-link' },
-  { mobile: false, href: "/", linkText: "About", key: 'about2-link' },
+  { mobile: false, href: "/", linkText: "Home", key: "home-link" },
+  { mobile: false, href: "/", linkText: "About", key: "about-link" },
+  { mobile: false, href: "/", linkText: "Articles", key: "articles-link" },
+  { mobile: false, href: "/", linkText: "Components", key: "components-link" },
+  { mobile: false, href: "/", linkText: "About", key: "about2-link" },
 ];
 
 const Navbar = () => {
