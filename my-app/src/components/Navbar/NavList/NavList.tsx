@@ -15,6 +15,7 @@ const NavList = (NavListProps: NavListProps) => {
         {NavListProps.links.map((navListItem: NavLinkProps) => {
           return (
             <NavLink
+              key={navListItem.key}
               href={navListItem.href}
               mobile={navListItem.mobile}
               linkText={navListItem.linkText}
@@ -29,6 +30,7 @@ const NavList = (NavListProps: NavListProps) => {
         {NavListProps.links.map((navListItem: NavLinkProps) => {
           return (
             <NavLink
+              key={navListItem.key}
               href={navListItem.href}
               mobile={navListItem.mobile}
               linkText={navListItem.linkText}
