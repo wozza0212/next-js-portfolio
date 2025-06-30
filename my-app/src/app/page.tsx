@@ -17,7 +17,9 @@ export default function Home() {
       <main>
         <div>
           <p>Some text around name</p>
-          <p className={bitcoinGridDouble.className}>Thomas Wasnidge</p>
+          <div className={styles.coolNameFont}>
+            <p className={bitcoinGridDouble.className}>Thomas Wasnidge</p>
+          </div>
         </div>
       </main>
     </div>
