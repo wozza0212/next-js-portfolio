@@ -4,7 +4,17 @@ import styles from "./homepage.module.css";
 const bitcoinGridDouble = localFont({
   src: [
     {
-      path: "../../public/fonts/BitcountGridDouble-wght.ttf",
+      path: "../../public/fonts/Bitcount_Grid_Double/BitcountGridDouble-wght.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
+
+const workSans = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf",
       weight: "400",
       style: "normal",
     },
@@ -18,7 +28,7 @@ export default function Home() {
         <div>
           <p>Some text around name</p>
           <div className={styles.coolNameFont}>
-            <p className={bitcoinGridDouble.className}>Thomas Wasnidge</p>
+            <p className={workSans.className}>Thomas Wasnidge</p>
           </div>
         </div>
       </main>
