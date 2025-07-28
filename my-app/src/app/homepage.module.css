@@ -1,3 +1,7 @@
 .coolNameFont {
-  font-size: 90px;
+  font-size: 11em;
+}
+
+.introBox {
+  margin: 2em;
 }

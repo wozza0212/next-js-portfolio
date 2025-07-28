@@ -26,9 +26,11 @@ export default function Home() {
     <div>
       <main>
         <div>
-          <p>Some text around name</p>
-          <div className={styles.coolNameFont}>
-            <p className={workSans.className}>Thomas Wasnidge</p>
+          <div className={`${styles.introBox}`}>
+            <p>I am</p>
+            <div className={styles.coolNameFont}>
+              <p className={workSans.className}>Thomas Wasnidge</p>
+            </div>
           </div>
         </div>
       </main>
