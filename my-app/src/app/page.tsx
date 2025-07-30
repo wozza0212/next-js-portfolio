@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import styles from "./homepage.module.css";
+import Link from "next/link";
 
 const bitcoinGridDouble = localFont({
   src: [
@@ -31,6 +32,12 @@ export default function Home() {
             <div className={styles.coolNameFont}>
               <p className={workSans.className}>Thomas Wasnidge</p>
             </div>
+          </div>
+          <div>
+            <h2>Projects</h2>
+            <p>
+              <Link href={"./react-projects"}>Projects</Link>
+            </p>
           </div>
         </div>
       </main>
