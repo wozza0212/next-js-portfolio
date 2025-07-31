@@ -1,7 +1,7 @@
 "use client";
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useState } from "react";
+import { KeyboardEvent, useState } from "react";
 import { ChangeEvent } from "react";
 import styles from "./index.module.css";
 
@@ -12,9 +12,19 @@ interface User {
 const projectOne: NextPage = () => {
   const [userQuery, setUserQuery] = useState<User>({ query: "" });
 
+  const searchQuery = () => {
+    window.open(`https://google.com/search?q=${userQuery.query}`, "_blank");
+  };
+
   const updateUserQuery = (e: ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
     setUserQuery({ query: e.target.value });
+  };
+
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      searchQuery();
+    }
   };
   return (
     <main>
@@ -26,8 +36,9 @@ const projectOne: NextPage = () => {
               className={styles.input}
               value={userQuery.query}
               onChange={updateUserQuery}
+              onKeyDown={handleKeyPress}
             />
-            <button>Search</button>
+            <button onClick={searchQuery}>Search</button>
           </div>
         </div>
         <div>
