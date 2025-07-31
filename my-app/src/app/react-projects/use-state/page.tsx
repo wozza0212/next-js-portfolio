@@ -5,6 +5,8 @@ import { KeyboardEvent, useState } from "react";
 import { ChangeEvent } from "react";
 import styles from "./index.module.css";
 
+const endpoint:string = 'https://digimon-api.vercel.app/api/digimon/name/:name'
+
 interface User {
   query?: string;
 }
