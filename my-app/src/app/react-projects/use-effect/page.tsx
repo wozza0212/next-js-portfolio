@@ -1,6 +1,7 @@
 "use client";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Digimon {
   name?: string;
@@ -36,7 +37,15 @@ const useEffectProject: NextPage = () => {
       <h1>Digimon</h1>
       <h3>{name}</h3>
       <h3>{level}</h3>
-      <h3>{img}</h3>
+      {img ? (
+        <div>
+          <Image alt={"Digimin Pic"} src={img} width={400} height={500}></Image>
+        </div>
+      ) : (
+        <div>
+          <h2>Loading</h2>
+        </div>
+      )}
     </main>
   );
 };
