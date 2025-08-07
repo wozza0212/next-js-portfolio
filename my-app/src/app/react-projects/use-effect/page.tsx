@@ -1,7 +1,7 @@
 "use client";
 import { NextPage } from "next";
-import { useRandomFetch } from "../helpers/helpers";
-import { DigiFetchObject } from "../helpers/types";
+import { useRandomFetch } from "../../../components/helpers/helpers";
+import { DigiFetchObject } from "../../../components/helpers/types";
 import Image from "next/image";
 
 const data = await fetch("https://digimon-api.vercel.app/api/digimon/").then(
