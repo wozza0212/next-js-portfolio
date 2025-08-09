@@ -8,6 +8,9 @@ const Tutorial: NextPage = () => {
         <h2>React Hooks tutorials</h2>
         <Link href={"./react-projects/use-state"}>Project one</Link>
         <Link href={"./react-projects/use-effect"}>Project two</Link>
+        <Link href={"./react-projects/multiple-state-hooks"}>
+          Project three
+        </Link>
       </div>
     </main>
   );

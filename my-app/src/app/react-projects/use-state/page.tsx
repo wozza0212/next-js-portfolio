@@ -20,6 +20,7 @@ const projectOne: NextPage = () => {
 
   const updateUserQuery = (e: ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
+    // This conosle log seems 1 character behind the user query in the console, this doesnt happen for me but does in course code
     setUserQuery({ query: e.target.value });
   };
 
