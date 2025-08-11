@@ -20,12 +20,15 @@ const Tasks = () => {
     setTasks([...tasks, task]);
   };
 
-  const completeeTask = (completedTask) => {
+  const completeTask = (completedTask: Task) => () => {
     setCompletedTasks([...completedTasks, completedTask]);
     setTasks(tasks.filter((task) => task.id !== completedTask.id));
   };
 
-  console.log("tasks", tasks);
+  const deleteTask = (task: Task) => {
+    console.log(task);
+    setCompletedTasks(completedTasks.filter((t) => t.id !== task.id));
+  };
 
   return (
     <div>
@@ -37,9 +40,24 @@ const Tasks = () => {
       <div className="taskList">
         {tasks.map((task: Task) => {
           return (
-            <div key={task.id} onClick={completeeTask}>
+            <div key={task.id} onClick={completeTask(task)}>
               <h3>{task.task}</h3>
-              <h3>{task.id}</h3>
+            </div>
+          );
+        })}
+      </div>
+      <div className="completedTasks">
+        <h1>Completed Tasks</h1>
+        {completedTasks.map((finishedTask: Task) => {
+          return (
+            <div key={finishedTask.id}>
+              <h3>{finishedTask.task} </h3>
+              <span
+                onClick={() => deleteTask(finishedTask)}
+                className="deleteTask"
+              >
+                x
+              </span>
             </div>
           );
         })}
