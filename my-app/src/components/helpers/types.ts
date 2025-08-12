@@ -15,3 +15,10 @@ export interface RandomFetchObject {
   listLength: number
   initialValue: {};
 }
+
+export type Task = {
+  task: string;
+  id?: string;
+};
+
+export type Tasks = Task[];

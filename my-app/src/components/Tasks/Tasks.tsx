@@ -1,16 +1,34 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-type Task = {
-  task: string;
-  id?: string;
-};
-type Tasks = Task[];
-
+import { Task, Tasks } from "../helpers/types";
 let count = 0;
-const Tasks = () => {
+
+const TASKS_STORAGE_KEY = "TASKS_STORAGE_KEY";
+type StoredTasks = {
+  tasks: Tasks;
+  completedTasks: Tasks;
+};
+
+const storeTasks = (storedTasks: StoredTasks) => {
+  localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(storedTasks));
+};
+
+const readStoredTasks = () => {
+  JSON.parse(localStorage.getItem(TASKS_STORAGE_KEY));
+  // return storedTasks ? storedTasks : { tasks: [], completedTasks: [] };
+};
+
+const Checklist = () => {
   const [task, setTaskText] = useState<Task>({ task: "", id: "" });
-  const [tasks, setTasks] = useState<Tasks>([]);
-  const [completedTasks, setCompletedTasks] = useState<Tasks>([]);
+  const storedTasks = readStoredTasks();
+  const [tasks, setTasks] = useState<Tasks>(storedTasks.tasks);
+  const [completedTasks, setCompletedTasks] = useState<Tasks>(
+    storedTasks.completedTasks
+  );
+
+  useEffect(() => {
+    storeTasks(storedTasks);
+  });
 
   const updateTaskText = (e: ChangeEvent<HTMLInputElement>) => {
     setTaskText({ task: e.target.value, id: uuidv4() });
@@ -66,4 +84,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default Checklist;
