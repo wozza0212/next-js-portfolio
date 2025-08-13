@@ -1,17 +1,42 @@
-import { useState, ChangeEvent } from "react";
+"use client";
+import { useState, ChangeEvent, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-type Task = {
-  task: string;
-  id?: string;
-};
-type Tasks = Task[];
-
+import { Task, Tasks } from "../helpers/types";
 let count = 0;
-const Tasks = () => {
-  const [task, setTaskText] = useState<Task>({ task: "", id: "" });
-  const [tasks, setTasks] = useState<Tasks>([]);
-  const [completedTasks, setCompletedTasks] = useState<Tasks>([]);
 
+const TASKS_STORAGE_KEY = "TASKS_STORAGE_KEY";
+type StoredTasks = {
+  tasks: Tasks;
+  completedTasks: Tasks;
+};
+
+const storeTasks = (tasksMap: StoredTasks) => {
+  localStorage?.setItem(TASKS_STORAGE_KEY, JSON.stringify(tasksMap));
+};
+
+const readStoredTasks = () => {
+  if (typeof window !== "undefined") {
+    const tasksMap = JSON.parse(localStorage.getItem(TASKS_STORAGE_KEY)!);
+    if (tasksMap?.tasks == undefined) {
+      return { tasks: [], completedTasks: [] };
+    }
+    if (tasksMap.tasks !== undefined) {
+      return tasksMap;
+    }
+  }
+};
+
+const Checklist = () => {
+  const [task, setTaskText] = useState<Task>({ task: "", id: "" });
+  const storedTasks = readStoredTasks();
+  const [tasks, setTasks] = useState<Tasks>(storedTasks.tasks!);
+  const [completedTasks, setCompletedTasks] = useState<Tasks>(
+    storedTasks.completedTasks!
+  );
+
+  useEffect(() => {
+    storeTasks({ tasks, completedTasks });
+  });
   const updateTaskText = (e: ChangeEvent<HTMLInputElement>) => {
     setTaskText({ task: e.target.value, id: uuidv4() });
   };
@@ -38,7 +63,7 @@ const Tasks = () => {
         <button onClick={addTask}>Add Task</button>
       </div>
       <div className="taskList">
-        {tasks.map((task: Task) => {
+        {tasks?.map((task: Task) => {
           return (
             <div key={task.id} onClick={completeTask(task)}>
               <h3>{task.task}</h3>
@@ -48,7 +73,7 @@ const Tasks = () => {
       </div>
       <div className="completedTasks">
         <h1>Completed Tasks</h1>
-        {completedTasks.map((finishedTask: Task) => {
+        {completedTasks?.map((finishedTask: Task) => {
           return (
             <div key={finishedTask.id}>
               <h3>{finishedTask.task} </h3>
@@ -66,4 +91,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default Checklist;
