@@ -1,10 +1,19 @@
 import { useState, useEffect } from "react";
 import PICTURES from "../../../public/data/pictures";
 import Image from "next/image";
-import thing from "../../../public/assets/pictures/bridge.jpeg"
 
 const Gallery = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number>(0);
+
+  useEffect(() => {
+    setInterval(() => {
+      setIndex((storedIndex) => {
+        return (storedIndex + 1) % PICTURES.length;
+      });
+    }, 3000);
+  }, []);
+
+  console.log("index", index);
 
   return (
     <div>
