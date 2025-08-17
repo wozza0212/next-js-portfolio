@@ -29,9 +29,9 @@ const readStoredTasks = () => {
 const Checklist = () => {
   const [task, setTaskText] = useState<Task>({ task: "", id: "" });
   const storedTasks = readStoredTasks();
-  const [tasks, setTasks] = useState<Tasks>(storedTasks.tasks!);
+  const [tasks, setTasks] = useState<Tasks>(storedTasks?.tasks!);
   const [completedTasks, setCompletedTasks] = useState<Tasks>(
-    storedTasks.completedTasks!
+    storedTasks?.completedTasks!
   );
 
   useEffect(() => {
