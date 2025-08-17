@@ -11,6 +11,7 @@ const Tutorial: NextPage = () => {
         <Link href={"./react-projects/multiple-state-hooks"}>
           Project three
         </Link>
+        <Link href={"./react-projects/hooks-with-intervals"}>Project Four</Link>
       </div>
     </main>
   );
